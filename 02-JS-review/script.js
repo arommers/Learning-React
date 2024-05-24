@@ -135,41 +135,51 @@ const data = [
   },
 ];
 
-function getBooks() {
-  return data;
+// function getBooks() {
+//   return data;
+// }
+
+// function getBook(id) {
+//   return data.find((d) => d.id === id);
+// }
+
+// // Destructuring
+
+// const book = getBook(1);
+
+// // const title = book.title;
+// // const author = book.author;
+
+// const { title, author, genres, pages, publicationDate } = book;
+
+// const [primary, secondary, ...others] = genres;
+
+// const newGenres = [...genres, "epic fantasy"];
+
+// const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
+
+// updatedBook;
+
+// const overwriteProperty = { ...book, erotic: false, pages: 69 };
+
+// overwriteProperty;
+
+// const summary = `${title}, a ${pages} page long book, written by ${author} published in ${
+//   publicationDate.split("-")[0]
+// }`;
+
+// summary;
+
+// const pagesRange = pages > 1000 ? "more than 1000" : "fewer";
+
+// pagesRange;
+
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
 }
-
-function getBook(id) {
-  return data.find((d) => d.id === id);
-}
-
-// Destructuring
-
-const book = getBook(1);
-
-// const title = book.title;
-// const author = book.author;
-
-const { title, author, genres, pages, publicationDate } = book;
-
-const [primary, secondary, ...others] = genres;
-
-const newGenres = [...genres, "epic fantasy"];
-
-const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
-
-updatedBook;
-
-const overwriteProperty = { ...book, erotic: false, pages: 69 };
-
-overwriteProperty;
-
-const summary = `${title}, a ${pages} page long book, written by ${author} published in ${
-  publicationDate.split("-")[0]
-}`;
-
-summary;
-
-const pagesRange = pages > 1000 ? "more than 1000" : "fewer";
-
-pagesRange;
